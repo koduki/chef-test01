@@ -1,0 +1,12 @@
+{
+  "sources": {
+    "zabbix2.0": {
+      "locked_version": "0.1.0",
+      "git": "https://github.com/uchiunyo/chef-zabbix2.0.git",
+      "ref": "c201bba54ef606b040dcdb057397faafca870913"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    }
+  }
+}

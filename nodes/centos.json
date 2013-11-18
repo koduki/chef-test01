@@ -1,0 +1,16 @@
+{
+  "zabbix":{
+    "server":{
+      "DBHost":"localhost",
+      "DBName":"zabbix",
+      "DBUser":"zabbix",
+      "DBPassword":"zabbix"
+    }
+  },
+  "run_list":[
+    "zabbix2.0::server",
+    "zabbix2.0::agent",
+    "iptables_stop",
+    "httpd"
+  ]
+}
