@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server.vm.network :private_network, ip: "192.168.1.10"
   end
 
-  config.vm.define :batch1 do |server|
+  config.vm.define :collect1 do |server|
     server.vm.network :private_network, ip: "192.168.1.11"
   end
 
