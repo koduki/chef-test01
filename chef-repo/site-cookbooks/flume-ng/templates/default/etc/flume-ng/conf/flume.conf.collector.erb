@@ -1,6 +1,6 @@
 # Name the components on this agent
 agent.sources = avro
-agent.sinks = file
+agent.sinks = debug
 agent.channels = memoryChannel
 
 # Describe/configure the source
@@ -9,21 +9,8 @@ agent.sources.avro.bind = 0.0.0.0
 agent.sources.avro.port = 41414
 agent.sources.avro.channels = memoryChannel
 
-#agent.sources.apache.interceptors = itime ihost itype
-#agent.sources.apache.interceptors = itime ihost
-# http://flume.apache.org/FlumeUserGuide.html#timestamp-interceptor
-#agent.sources.apache.interceptors.itime.type = timestamp
-# http://flume.apache.org/FlumeUserGuide.html#host-interceptor
-#agent.sources.apache.interceptors.ihost.type = host
-#agent.sources.apache.interceptors.ihost.useIP = false
-#agent.sources.apache.interceptors.ihost.hostHeader = host
-# http://flume.apache.org/FlumeUserGuide.html#static-interceptor
-#agent.sources.apache.interceptors.itype.type = static
-#agent.sources.apache.interceptors.itype.key = log_type
-#agent.sources.apache.interceptors.itype.value = apache_access_combined
-
 # Describe the sink
-agent.sinks.debug.type = logger
+agent.sinks.debug.type = pascal.orz.cn.flumeplugins.SimpleFileSink
 agent.sinks.debug.channel = memoryChannel
 
 agent.sinks.file.type = file_roll

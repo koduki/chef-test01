@@ -1,0 +1,15 @@
+{
+  "host_name": "web2",
+  "run_list":[
+    "recipe[hostname_setting]",
+    "recipe[yum]",
+    "recipe[yum::epel]",
+    "recipe[iptables_stop]",
+    "recipe[install-baseapps]",
+    "recipe[java]",
+    "recipe[httpd]",
+    "recipe[add-cloudera-repository]",
+    "recipe[flume-ng::agent]",
+    "recipe[setting_users]"
+  ]
+}

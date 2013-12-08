@@ -8,18 +8,17 @@ agent.sources.apache.type = exec
 agent.sources.apache.command = tail -F /var/log/httpd/access_log
 agent.sources.apache.batchSize = 1
 agent.sources.apache.channels = memoryChannel
-#agent.sources.apache.interceptors = itime ihost itype
-#agent.sources.apache.interceptors = itime ihost
+agent.sources.apache.interceptors = itime ihost itype
 # http://flume.apache.org/FlumeUserGuide.html#timestamp-interceptor
-#agent.sources.apache.interceptors.itime.type = timestamp
+agent.sources.apache.interceptors.itime.type = timestamp
 # http://flume.apache.org/FlumeUserGuide.html#host-interceptor
-#agent.sources.apache.interceptors.ihost.type = host
-#agent.sources.apache.interceptors.ihost.useIP = false
-#agent.sources.apache.interceptors.ihost.hostHeader = host
+agent.sources.apache.interceptors.ihost.type = host
+agent.sources.apache.interceptors.ihost.useIP = false
+agent.sources.apache.interceptors.ihost.hostHeader = host
 # http://flume.apache.org/FlumeUserGuide.html#static-interceptor
-#agent.sources.apache.interceptors.itype.type = static
-#agent.sources.apache.interceptors.itype.key = log_type
-#agent.sources.apache.interceptors.itype.value = apache_access_combined
+agent.sources.apache.interceptors.itype.type = static
+agent.sources.apache.interceptors.itype.key = log_type
+agent.sources.apache.interceptors.itype.value = apache_access_combined
 
 # Describe the sink
 agent.sinks.debug.type = logger
@@ -27,7 +26,7 @@ agent.sinks.debug.channel = memoryChannel
 
 agent.sinks.avro.type = avro
 agent.sinks.avro.channel = memoryChannel
-agent.sinks.avro.hostname = 192.168.1.11
+agent.sinks.avro.hostname = 192.168.1.100
 agent.sinks.avro.port = 41414
 agent.sinks.avro.batch-size = 1
 

@@ -11,6 +11,30 @@ package "flume-ng-agent" do
   action :install
 end
 
+#
+# install plugins
+#
+plugin_dir = "usr/lib/flume-ng/plugins.d"
+plugin_name = "simple-file-sink"
+plugin_version = "1.0-SNAPSHOT"
+
+directory "/#{plugin_dir}/#{plugin_name}/lib/" do
+  mode 00755
+  owner "flume"
+  group "flume"
+  action :create
+  recursive true
+end
+
+cookbook_file "/#{plugin_dir}/#{plugin_name}/lib/#{plugin_name}-#{plugin_version}.jar" do
+  puts "#{plugin_dir}/#{plugin_name}/lib/#{plugin_name}-#{plugin_version}.jar"
+  source "#{plugin_dir}/#{plugin_name}/lib/#{plugin_name}-#{plugin_version}.jar"
+  action :create
+end
+
+#
+# setting config
+#
 template "/etc/flume-ng/conf/flume.conf" do
   source "etc/flume-ng/conf/flume.conf.collector.erb"
   owner "flume"
