@@ -9,7 +9,16 @@
 package "httpd" do
   action :install
 end
+
 service "httpd" do
   supports :status => true, :restart => true, :reload => true
   action [ :enable , :start ]
 end
+
+directory "/var/log/httpd/" do
+  mode 00755
+  owner "root"
+  group "root"
+  action :create
+end
+

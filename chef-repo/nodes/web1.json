@@ -9,6 +9,7 @@
     "recipe[java]",
     "recipe[httpd]",
     "recipe[add-cloudera-repository]",
-    "recipe[flume-ng-agent]"
+    "recipe[flume-ng::agent]",
+    "recipe[setting_users]"
   ]
 }

@@ -1,11 +1,11 @@
-flume-ng-agent CHANGELOG
-========================
+setting_users CHANGELOG
+=======================
 
-This file is used to list changes made in each version of the flume-ng-agent cookbook.
+This file is used to list changes made in each version of the setting_users cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of flume-ng-agent
+- [your_name] - Initial release of setting_users
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

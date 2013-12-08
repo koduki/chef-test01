@@ -1,5 +1,5 @@
 {
-  "host_name": "web1",
+  "host_name": "collect1",
   "run_list":[
     "recipe[hostname_setting]",
     "recipe[yum]",
@@ -8,6 +8,7 @@
     "recipe[install-baseapps]",
     "recipe[java]",
     "recipe[add-cloudera-repository]",
-    "recipe[flume-ng]"
+    "recipe[flume-ng::collector]",
+    "recipe[setting_users]"
   ]
 }
